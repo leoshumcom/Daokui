@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="术数占卜 - 道奎">
+  <section class="max-w-7xl mx-auto px-4 py-16">
+    <h1 class="text-4xl font-bold text-tao-gold text-center mb-12">术数占卜</h1>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- 八字基础 -->
+      <a href="/shushu/bazi" class="block bg-tao-gray/50 border border-tao-gold/20 rounded-lg p-8 hover:border-tao-gold/50 transition-all gold-glow group">
+        <h2 class="text-2xl font-bold text-tao-gold mb-3 group-hover:text-tao-red transition-colors">八字基础</h2>
+        <p class="text-tao-light/70">天干地支、五行生克、十神关系，从零开始学八字。</p>
+      </a>
+      
+      <!-- 六爻 -->
+      <a href="/shushu/liuyao" class="block bg-tao-gray/50 border border-tao-gold/20 rounded-lg p-8 hover:border-tao-gold/50 transition-all gold-glow group">
+        <h2 class="text-2xl font-bold text-tao-gold mb-3 group-hover:text-tao-red transition-colors">六爻</h2>
+        <p class="text-tao-light/70">文王卦、纳甲法、六亲六神，传统占卜之术。</p>
+      </a>
+      
+      <!-- 奇门遁甲 -->
+      <a href="/shushu/qimen" class="block bg-tao-gray/50 border border-tao-gold/20 rounded-lg p-8 hover:border-tao-gold/50 transition-all gold-glow group">
+        <h2 class="text-2xl font-bold text-tao-gold mb-3 group-hover:text-tao-red transition-colors">奇门遁甲</h2>
+        <p class="text-tao-light/70">帝王之术，九宫八门九星八神，时空预测学。</p>
+      </a>
+      
+      <!-- 风水常识 -->
+      <a href="/shushu/fengshui" class="block bg-tao-gray/50 border border-tao-gold/20 rounded-lg p-8 hover:border-tao-gold/50 transition-all gold-glow group">
+        <h2 class="text-2xl font-bold text-tao-gold mb-3 group-hover:text-tao-red transition-colors">风水常识</h2>
+        <p class="text-tao-light/70">峦头理气、八宅玄空，人居环境与气场调和。</p>
+      </a>
+    </div>
+  </section>
+</Layout>

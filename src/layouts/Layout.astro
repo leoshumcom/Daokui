@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <meta name="description" content="道奎 - 道教文化、周易易学、术数占卜门户网站">
+  <meta name="keywords" content="道教,周易,八卦,占卜,八字,风水,奇门遁甲,易经,三清,道家">
+  <title>道奎 - 道教文化门户</title>
+</head>
+<body class="bg-tao-black text-tao-white font-tao">
+  <!-- 全局样式 -->
+  <style>
+    /* 滚动条美化 */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #1a1a2e; }
+    ::-webkit-scrollbar-thumb { background: #d4a574; border-radius: 4px; }
+    
+    /* 全局过渡 */
+    * { transition: color 0.2s ease, border-color 0.2s ease; }
+    
+    /* 金边发光效果 */
+    .gold-glow:hover {
+      box-shadow: 0 0 15px rgba(212, 165, 116, 0.3);
+      border-color: #d4a574;
+    }
+    
+    /* 卡片入场动画 */
+    .card-enter {
+      animation: ink-fade 0.6s ease-out forwards;
+    }
+  </style>
+  
+  <!-- 导航栏 -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-tao-black/95 backdrop-blur-sm border-b border-tao-gold/30">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo -->
+        <a href="/" class="flex items-center space-x-3">
+          <svg class="w-10 h-10" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="45" fill="none" stroke="#d4a574" stroke-width="2"/>
+            <path d="M50 5 A45 45 0 0 1 50 95 A22.5 22.5 0 0 0 50 50 A22.5 22.5 0 0 1 50 5" fill="#f5f5dc"/>
+            <circle cx="50" cy="27.5" r="5" fill="#1a1a2e"/>
+            <circle cx="50" cy="72.5" r="5" fill="#f5f5dc"/>
+          </svg>
+          <span class="text-2xl font-bold text-tao-gold tracking-widest">道奎</span>
+        </a>
+        
+        <!-- 桌面导航 -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="/" class="text-tao-gold hover:text-tao-red transition-colors">首页</a>
+          
+          <div class="relative group">
+            <button class="text-tao-light hover:text-tao-gold transition-colors flex items-center">
+              道教文化
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div class="absolute top-full left-0 mt-2 w-48 bg-tao-dark/95 backdrop-blur-sm border border-tao-gold/30 rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+              <a href="/dao/jiaoxue" class="block px-4 py-2 hover:bg-tao-gray hover:text-tao-gold">道家思想</a>
+              <a href="/dao/sanqing" class="block px-4 py-2 hover:bg-tao-gray hover:text-tao-gold">三清四御</a>
+              <a href="/dao/gongguan" class="block px-4 py-2 hover:bg-tao-gray hover:text-tao-gold">宫观道场</a>
+              <a href="/dao/jingji" class="block px-4 py-2 hover:bg-tao-gray hover:text-tao-gold">经籍典籍</a>
+            </div>
+          </div>
+          
+          <div class="relative group">
+            <button class="text-tao-light hover:text-tao-gold transition-colors flex items-center">
+              周易易学
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div class="absolute top-full left-0 mt-2 w-48 bg-tao-dark/95 backdrop-blur-sm border border-tao-gold/30 rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+              <a href="/yijing/yuanwen" class="block px-4 py-2 hover:bg-tao-gray hover:text-tao-gold">易经原文</a>
+              <a href="/yijing/guaxiang" class="block px-4 py-2 hover:bg-tao-gray hover:text-tao-gold">卦象详解</a>
+              <a href="/yijing/he tu" class="block px-4 py-2 hover:bg-tao-gray hover:text-tao-gold">河图洛书</a>
+              <a href="/yijing/wuxing" class="block px-4 py-2 hover:bg-tao-gray hover:text-tao-gold">五行八卦</a>
+            </div>
+          </div>
+          
+          <div class="relative group">
+            <button class="text-tao-light hover:text-tao-gold transition-colors flex items-center">
+              术数占卜
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div class="absolute top-full left-0 mt-2 w-48 bg-tao-dark/95 backdrop-blur-sm border border-tao-gold/30 rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+              <a href="/shushu/bazi" class="block px-4 py-2 hover:bg-tao-gray hover:text-tao-gold">八字基础</a>
+              <a href="/shushu/liuyao" class="block px-4 py-2 hover:bg-tao-gray hover:text-tao-gold">六爻</a>
+              <a href="/shushu/qimen" class="block px-4 py-2 hover:bg-tao-gray hover:text-tao-gold">奇门遁甲</a>
+              <a href="/shushu/fengshui" class="block px-4 py-2 hover:bg-tao-gray hover:text-tao-gold">风水常识</a>
+            </div>
+          </div>
+          
+          <a href="/blog" class="text-tao-light hover:text-tao-gold transition-colors">博文专栏</a>
+          <a href="/media" class="text-tao-light hover:text-tao-gold transition-colors">视频图集</a>
+          <a href="/about" class="text-tao-light hover:text-tao-gold transition-colors">关于本站</a>
+        </div>
+        
+        <!-- 搜索框 -->
+        <div class="hidden md:block">
+          <input type="search" placeholder="搜索..." class="bg-tao-dark border border-tao-gold/30 rounded-full px-4 py-1 text-sm text-tao-light placeholder-tao-light/50 focus:outline-none focus:border-tao-gold w-40">
+        </div>
+        
+        <!-- 移动端菜单按钮 -->
+        <button class="md:hidden text-tao-gold" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+      
+      <!-- 移动端菜单 -->
+      <div id="mobile-menu" class="hidden md:hidden pb-4">
+        <a href="/" class="block py-2 text-tao-gold">首页</a>
+        <a href="/dao" class="block py-2 text-tao-light">道教文化</a>
+        <a href="/yijing" class="block py-2 text-tao-light">周易易学</a>
+        <a href="/shushu" class="block py-2 text-tao-light">术数占卜</a>
+        <a href="/blog" class="block py-2 text-tao-light">博文专栏</a>
+        <a href="/media" class="block py-2 text-tao-light">视频图集</a>
+        <a href="/about" class="block py-2 text-tao-light">关于本站</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- 主内容区 -->
+  <main class="pt-16">
+    <slot />
+  </main>
+  
+  <!-- 页脚 -->
+  <footer class="bg-tao-dark border-t border-tao-gold/20 mt-20">
+    <div class="max-w-7xl mx-auto px-4 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-tao-gold font-bold mb-4">道奎</h3>
+          <p class="text-tao-light/70 text-sm">弘扬道教文化，传承周易智慧</p>
+        </div>
+        <div>
+          <h4 class="text-tao-gold font-semibold mb-3">道教文化</h4>
+          <ul class="space-y-2 text-sm text-tao-light/70">
+            <li><a href="#" class="hover:text-tao-gold">道家思想</a></li>
+            <li><a href="#" class="hover:text-tao-gold">三清四御</a></li>
+            <li><a href="#" class="hover:text-tao-gold">宫观道场</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-tao-gold font-semibold mb-3">周易易学</h4>
+          <ul class="space-y-2 text-sm text-tao-light/70">
+            <li><a href="#" class="hover:text-tao-gold">易经原文</a></li>
+            <li><a href="#" class="hover:text-tao-gold">卦象详解</a></li>
+            <li><a href="#" class="hover:text-tao-gold">五行八卦</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-tao-gold font-semibold mb-3">联系我们</h4>
+          <ul class="space-y-2 text-sm text-tao-light/70">
+            <li>邮箱: admin@daokui.com</li>
+            <li>微信公众号: 道奎</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-8 pt-8 border-t border-tao-gold/10 text-center text-sm text-tao-light/50">
+        <p>© 2026 道奎 Daokui.com | 占卜命理仅供参考 | 隐私声明 | 内容免责</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

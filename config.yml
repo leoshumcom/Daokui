@@ -1,0 +1,67 @@
+backend:
+  name: github
+  repo: leoshumcom/Daokui
+  branch: main
+  base_url: https://api.cloudflare.com
+  auth_endpoint: auth/v1/api/cloudflare
+
+media_folder: public/uploads
+public_folder: /uploads
+
+collections:
+  - name: "posts"
+    label: "博文"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "摘要", name: "excerpt", widget: "string" }
+      - { label: "分类", name: "category", widget: "select", options: ["道教文化", "周易易学", "术数占卜", "风水", "其他"] }
+      - { label: "标签", name: "tags", widget: "list" }
+      - { label: "发布日期", name: "date", widget: "datetime" }
+      - { label: "正文", name: "body", widget: "markdown" }
+
+  - name: "dao"
+    label: "道教文化"
+    folder: "_dao"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "摘要", name: "excerpt", widget: "string" }
+      - { label: "子分类", name: "section", widget: "select", options: ["道家思想", "三清四御", "宫观道场", "经籍典籍"] }
+      - { label: "正文", name: "body", widget: "markdown" }
+
+  - name: "yijing"
+    label: "周易易学"
+    folder: "_yijing"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "摘要", name: "excerpt", widget: "string" }
+      - { label: "子分类", name: "section", widget: "select", options: ["易经原文", "卦象详解", "河图洛书", "五行八卦"] }
+      - { label: "正文", name: "body", widget: "markdown" }
+
+  - name: "shushu"
+    label: "术数占卜"
+    folder: "_shushu"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "摘要", name: "excerpt", widget: "string" }
+      - { label: "子分类", name: "section", widget: "select", options: ["八字基础", "六爻", "奇门遁甲", "风水常识"] }
+      - { label: "正文", name: "body", widget: "markdown" }
+
+  - name: "settings"
+    label: "站点设置"
+    files:
+      - name: "site"
+        label: "站点信息"
+        file: "_data/site.json"
+        fields:
+          - { label: "站点名称", name: "name", widget: "string", default: "道奎" }
+          - { label: "站点描述", name: "description", widget: "string" }
+          - { label: "联系邮箱", name: "email", widget: "string" }
